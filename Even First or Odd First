@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+	int n,arr[100],s;
+	int i=-1,odd[100],even[100];
+	scanf("%d%d",&s,&n);
+	while(n>0){
+	    i++;
+	    arr[i]=n%10;
+	    n=n/10;
+	}
+	int b,c;
+	b=c=-1;
+	for(int a=i;a>=0;a--){
+	   if (arr[a]%2==0){
+	       b++;
+	       even[b]=arr[a];
+	   }
+	   else{
+	       c++;
+	       odd[c]=arr[a];
+	   }
+	}
+	if(s==0){
+	    for(int t=0;t<=c;t++)
+	        printf("%d",odd[t]);
+	    for(int t1=0;t1<=b;t1++)
+	        printf("%d",even[t1]);
+	}
+	else{
+	    for(int t1=0;t1<=b;t1++)
+	        printf("%d",even[t1]);
+	    for(int t=0;t<=c;t++)
+	        printf("%d",odd[t]);
+	}
+	return 0;
+}
