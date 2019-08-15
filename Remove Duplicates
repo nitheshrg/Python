@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int b[1000],a,k,j;
+    scanf("%d",&a);
+    for(int i=0;i<a;i++)
+    {
+        scanf("%d",&b[i]);
+    }
+    for(j=0;j<a;j++)
+    {
+        for(k=0;k<a;k++)
+        {
+            if(b[j]==b[k])
+                break;
+        }
+        if(j==k)
+            printf("%d ",b[j]);
+    }
+    return 0;
+}
