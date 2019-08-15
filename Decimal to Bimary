@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+void bin(unsigned int c){
+    if(c>1)
+        bin(c/2);
+    printf("%d",c%2);
+}
+int main() {
+    int c;
+	scanf("%d",&c);
+	bin(c);
+	return 0;
+}
