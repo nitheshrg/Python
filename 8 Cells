@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+	int a[8],a1[8],n;
+	a1[0]=0;
+	for(int i=0;i<8;i++)
+	    scanf("%d",&a[i]);
+	scanf("%d",&n);
+	for(int i=0;i<n;i++){
+	    for(int j=1;j<7;j++){
+	        if(a[j+1]^a[j-1]==0)
+	            a1[j]=0;
+	        else
+	            a1[j]=1;
+	    }
+	    a1[7]=0;
+	    if(a[1]==1)
+	        a1[0]=1;
+	    else
+	        a1[0]=0;
+	    if(a[6]==1)
+	        a1[7]=1;
+	    else
+	        a1[7]=0;
+	   for(int b=0;b<8;b++)
+	       a[b]=a1[b];
+	}
+	for(int i=0;i<8;i++)
+	    printf("%d ",a[i]);
+	return 0;
+}
